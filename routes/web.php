@@ -25,3 +25,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::view('/', 'welcome');
+Route::get('/todo-list', function () {
+    return Inertia::render('TodoListPage'); // Rendering the TodoListPage.vue Vue component
+});
